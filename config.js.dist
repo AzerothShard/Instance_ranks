@@ -1,0 +1,7 @@
+(function () {
+  var app = angular.module('instance_ranks');
+
+  /* Edit with path of APAW */
+  app.api = "../apaw/web/app.php/";
+
+})();
