@@ -11,13 +11,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'rankGenericController'
     })
     .state('paging', {
-      url: '/:from',
+      url: '/g/:from',
       templateUrl: 'partials/home.html',
       controller: 'rankGenericController'
     })
     .state('search', {
-      url: '/:from/:search',
+      url: '/g/:from/:search',
       templateUrl: 'partials/home.html',
       controller: 'rankGenericController'
+    })
+    .state('player_instance', {
+      url: '/gp/:guid',
+      templateUrl: 'partials/player_instance.html',
+      controller: 'playerInstanceController'
+    })
+    .state('instances', {
+      url: '/i/',
+      templateUrl: 'partials/instances.html',
+      controller: 'instancesController'
     });
 });

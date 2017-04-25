@@ -29,7 +29,7 @@
     <body>
 
       <div class="container">
-        <a href="#!/0/">
+        <a href="#!/g/0/">
           <p class="h1 text-center text-warning">Instance Ranks</p>
         </a>
         <br>
@@ -38,31 +38,31 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="text-center menu">
-              <a href="">Generale</a>
-              <a href="">Instances</a>
+              <a href="#!/g/0/">Generale</a>
+              <a href="#!/i/">Instances</a>
               <a href="">First Kill</a>
             </div>
           </div>
         </div>
         <br>
 
-        <div class="row">
+        <div class="row" ng-show="multiple_params">
           <div class="col-xs-6">
             <input type="text" placeholder="Search..." class="search-input" ng-model="search">
-            <a ng-href="#!/{{ from }}/{{ search }}">
+            <a ng-href="#!/g/{{ from }}/{{ search }}">
               <button class="search arrow-right"><span class="glyphicon glyphicon-search"></span></button>
             </a>
           </div>
 
           <div class="col-xs-6">
             <div class="text-right">
-              <a ng-href="#!/{{ (from - 50 > 0 ? from-50 : 0) }}/{{ search }}">
+              <a ng-href="#!/g/{{ (from - 50 > 0 ? from-50 : 0) }}/{{ search }}">
                 <button class="arrow arrow-left">
                   <i class="pull-right glyphicon glyphicon-chevron-left"></i>
                 </button>
               </a>
               <b class="text-align">&nbsp; {{ from + " - " + (from-(-50)) }} &nbsp;</b>
-              <a ng-href="#!/{{ 50-(-from) }}/{{ search }}">
+              <a ng-href="#!/g/{{ 50-(-from) }}/{{ search }}">
                 <button class="arrow arrow-right">
                   <i class="pull-right glyphicon glyphicon-chevron-right"></i>
                 </button>

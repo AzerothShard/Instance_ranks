@@ -66,3 +66,43 @@ th {
   color: #ffab00;
   transition: .2s all;
 }
+
+/* General */
+.general tr {
+  transition: all .5s;
+}
+
+.general tr:hover {
+  background-color: rgba(0,255,0,0.1) !important;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+/* Instance Ranks */
+.instances * {
+  font-size: 40px;
+}
+
+.instances td {
+  vertical-align: middle !important;
+}
+
+.instances img {
+  border-radius: 4em;
+  transition: 2s all;
+}
+
+.instances tr:hover img {
+  border-radius: 0em;
+  transition: 1.5s all;
+}
+
+.instances tr:hover {
+  transition: all .5s;
+}
+
+.instances tr:hover {
+  background-color: rgba(0,255,0,0.1) !important;
+  cursor: pointer;
+  transition: all .5s;
+}
