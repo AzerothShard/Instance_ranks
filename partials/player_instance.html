@@ -1,6 +1,24 @@
 <div class="row">
   <div class="col-xs-12">
-    
+    <table class="table table-striped table-bordered">
+      <thead class="text-warning">
+        <th>●</th>
+        <th>Character</th>
+        <th>lvl</th>
+        <th>Guild</th>
+      </thead>
+      <tbody>
+        <tr class="text-center align-middle">
+          <td>
+            <img width="64" ng-src="{{ 'img/race/64/' + char.race + '-' + char.gender + '.png' }}">
+            <img height="64" ng-src="{{ 'img/class/64/' + char.class + '.png' }}">
+          </td>
+          <td><b class="text-success" style="font-size: 25px">{{ char.name }}</b></td>
+          <td><b style="color: #2962ff;">{{ char.level }}</b></td>
+          <td><b style="color: rgba(0,255,0,0.5);">{{ (char.guildName != "" && char.guildName != null) ? "<" + char.guildName + ">" : "" }}</b></td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

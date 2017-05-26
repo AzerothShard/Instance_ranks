@@ -1,6 +1,6 @@
-var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap' ]);
+var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap', 'ngStorage']);
 
-app.controller('rankGenericController', function ($rootScope, $scope, $stateParams, $http, $state) {
+app.controller('rankGenericController', function ($rootScope, $scope, $stateParams, $http, $state, $localStorage) {
 
   $rootScope.multiple_params = true;
 
@@ -16,13 +16,16 @@ app.controller('rankGenericController', function ($rootScope, $scope, $statePara
    console.log("[ERROR] $http.get request failed!");
  });
 
- $scope.goTo = function(guid) {
-   $state.go("player_instance", { guid: guid });
+ $scope.goTo = function(char) {
+   $localStorage.char = char;
+   $state.go("player_instance", { guid: char.guid });
  };
 
 });
 
-app.controller('playerInstanceController', function ($rootScope, $scope, $stateParams, $http) {
+app.controller('playerInstanceController', function ($rootScope, $scope, $stateParams, $http, $localStorage) {
+
+  $scope.char = $localStorage.char != null ? $localStorage.char : null;
 
   $rootScope.multiple_params = false;
 
@@ -32,6 +35,7 @@ app.controller('playerInstanceController', function ($rootScope, $scope, $stateP
   }, function (data, status, header, config) {
    console.log("[ERROR] $http.get request failed!");
  });
+
 });
 
 app.controller('instancesController', function ($rootScope, $scope, $stateParams, $http) {

@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody class="general">
-          <tr ng-repeat="res in result track by $index" ng-click="goTo(res.guid)">
+          <tr ng-repeat="res in result track by $index" ng-click="goTo(res)">
             <td class="text-danger">{{ res.position }}</td>
             <td class="text-success">{{ res.name }}</td>
             <td>

@@ -106,3 +106,7 @@ th {
   cursor: pointer;
   transition: all .5s;
 }
+
+.align-middle td {
+  vertical-align: middle !important;
+}
