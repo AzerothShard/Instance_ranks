@@ -1,4 +1,4 @@
-var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap', 'ngStorage']);
+var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap', 'ngStorage', 'angular-loading-bar']);
 
 app.controller('rankGenericController', function ($rootScope, $scope, $stateParams, $http, $state, $localStorage) {
 
