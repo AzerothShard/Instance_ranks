@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped table-bordered">
+      <thead class="text-warning">
+        <th></th>
+        <th>Name</th>
+        <th>lvl</th>
+      </thead>
+      <tbody class="instances">
+        <tr class="text-center align-middle">
+          <td><img width="128" height="128" ng-src="{{ 'img/instances/' + instance.name + '.png' }}"></td>
+          <td class="text-success">{{ instance.name }}</td>
+          <td class="text-info">{{ instance.level }}</td>
+          <td class="text-danger">{{ instance.count }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="text-right">
+  <button class="arrow arrow-left text-success" ng-click="update((from - 50 > 0 ? from-50 : 0))">
+    <i class="pull-right glyphicon glyphicon-chevron-left"></i>
+  </button>
+  <b class="text-align">&nbsp; {{ from + " - " + (from-(-50)) }} &nbsp;</b>
+  <button class="arrow arrow-right text-success" ng-click="update((50-(-from)))">
+    <i class="pull-right glyphicon glyphicon-chevron-right"></i>
+  </button>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <div class="text-center">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr class="text-warning">
+            <th>#</th>
+            <th>Character</th>
+            <th>●</th>
+            <th>lvl</th>
+            <th>Guild</th>
+          </tr>
+        </thead>
+        <tbody class="general">
+          <tr ng-repeat="res in result track by $index" class="exp-{{ res.exp }}">
+            <td class="text-danger">{{ $index+1+from }}</td>
+            <td><b class="text-success">{{ res.charName }}</b></td>
+            <td>
+              <img width="32" ng-src="{{ 'img/race/64/' + res.race + '-' + res.gender + '.png' }}">
+              <img height="32" ng-src="{{ 'img/class/64/' + res.class + '.png' }}">
+            </td>
+            <td><b class="text-info">{{ res.charLevel }}</b></td>
+            <td><b class="guild">{{ (res.guildName != "" && res.guildName != null) ? "<" + res.guildName + ">" : "" }}</b></td></td>
+            <td><b class="text-danger">{{ res.count }}</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -29,5 +29,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/i/',
       templateUrl: 'partials/instances.html',
       controller: 'instancesController'
+    })
+    .state('instance_player', {
+      url: '/ip/:criteria',
+      templateUrl: 'partials/instance_player.html',
+      controller: 'instancePlayerController'
     });
 });

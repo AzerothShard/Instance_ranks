@@ -14,8 +14,8 @@
             <img height="64" ng-src="{{ 'img/class/64/' + char.class + '.png' }}">
           </td>
           <td><b class="text-success" style="font-size: 25px">{{ char.name }}</b></td>
-          <td><b style="color: #2962ff;">{{ char.level }}</b></td>
-          <td><b style="color: rgba(0,255,0,0.5);">{{ (char.guildName != "" && char.guildName != null) ? "<" + char.guildName + ">" : "" }}</b></td></td>
+          <td><b class="text-info">{{ char.level }}</b></td>
+          <td><b class="guild">{{ (char.guildName != "" && char.guildName != null) ? "<" + char.guildName + ">" : "" }}</b></td></td>
         </tr>
       </tbody>
     </table>
@@ -37,8 +37,8 @@
           </tr>
         </thead>
         <tbody class="instances">
-          <tr ng-repeat="res in result track by $index">
-            <td class="text-danger">{{ res.position }}</td>
+          <tr ng-repeat="res in result track by $index" class="exp-{{ res.exp }}">
+            <td class="text-danger">{{ $index+1 }}</td>
             <td><img width="150" height="150" ng-src="{{ 'img/instances/' + res.name + '.png' }}"></td>
             <td class="text-warning">{{ res.name }}</td>
             <td style="color: #2962ff;">{{ res.level }}</td>

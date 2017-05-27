@@ -110,3 +110,9 @@ th {
 .align-middle td {
   vertical-align: middle !important;
 }
+
+.exp-1 { border: 2px solid #795548; }
+.exp-2 { border: 2px solid #1b5e20; }
+.exp-3 { border: 2px solid #0d47a1; }
+
+.guild { color: rgba(0,255,0,0.7); }

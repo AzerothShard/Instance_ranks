@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="instance_ranks">
     <head>
         <meta charset="UTF-8">
@@ -43,36 +43,11 @@
             <div class="text-center menu">
               <a href="#!/g/0/">Generale</a>
               <a href="#!/i/">Instances</a>
-              <a href="">First Kill</a>
+<!--              <a href="">First Kill</a>-->
             </div>
           </div>
         </div>
         <br>
-
-        <div class="row" ng-show="multiple_params">
-          <div class="col-xs-6">
-            <input type="text" placeholder="Search..." class="search-input" ng-model="search">
-            <a ng-href="#!/g/{{ from }}/{{ search }}">
-              <button class="search arrow-right"><span class="glyphicon glyphicon-search"></span></button>
-            </a>
-          </div>
-
-          <div class="col-xs-6">
-            <div class="text-right">
-              <a ng-href="#!/g/{{ (from - 50 > 0 ? from-50 : 0) }}/{{ search }}">
-                <button class="arrow arrow-left">
-                  <i class="pull-right glyphicon glyphicon-chevron-left"></i>
-                </button>
-              </a>
-              <b class="text-align">&nbsp; {{ from + " - " + (from-(-50)) }} &nbsp;</b>
-              <a ng-href="#!/g/{{ 50-(-from) }}/{{ search }}">
-                <button class="arrow arrow-right">
-                  <i class="pull-right glyphicon glyphicon-chevron-right"></i>
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
 
         <div class="raw">
           <div class="col-xs-12">
