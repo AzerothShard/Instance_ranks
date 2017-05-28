@@ -21,7 +21,7 @@ app.controller('rankGenericController', function ($rootScope, $scope, $statePara
 
   $rootScope.search = $rootScope.search;
 
-  $http.get( app.api + "local/azth/char/character_instances" + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
+  $http.get( app.api + "azth/char/character_instances" + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
    .then(function (response) {
      $scope.result = response.data;
   }, function (data, status, header, config) {
@@ -34,7 +34,7 @@ app.controller('playerInstanceController', function ($rootScope, $scope, $stateP
 
   $scope.char = $localStorage.char != null ? $localStorage.char : null;
 
-  $http.get( app.api + "local/azth/char/player_instance?guid=" + $stateParams.guid)
+  $http.get( app.api + "azth/char/player_instance?guid=" + $stateParams.guid)
    .then(function (response) {
      $scope.result = response.data;
   }, function (data, status, header, config) {
@@ -50,7 +50,7 @@ app.controller('instancesController', function ($rootScope, $scope, $stateParams
 
   $rootScope.search = $rootScope.search;
 
-  $http.get( app.api + "local/azth/char/instance_ranks" + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
+  $http.get( app.api + "azth/char/instance_ranks" + "?from=" + $rootScope.from + "&search=" + $rootScope.search)
    .then(function (response) {
      $scope.result = response.data;
   }, function (data, status, header, config) {
@@ -68,7 +68,7 @@ app.controller('instancePlayerController', function ($rootScope, $scope, $stateP
   $scope.update = function(from) {
     $scope.from = from;
 
-    $http.get( app.api + "local/azth/char/instance_player?criteria=" + $stateParams.criteria + "&from=" + $scope.from)
+    $http.get( app.api + "azth/char/instance_player?criteria=" + $stateParams.criteria + "&from=" + $scope.from)
      .then(function (response) {
        $scope.result = response.data;
     }, function (data, status, header, config) {

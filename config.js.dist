@@ -2,6 +2,8 @@
   var app = angular.module('instance_ranks');
 
   /* Edit with path of APAW */
-  app.api = "../apaw/web/app.php/";
+  app.api = "../apaw/web/app.php/connections/";
+
+  // take "connections" from app/config/parameters.yml (ex. "local")
 
 })();
