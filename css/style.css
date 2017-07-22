@@ -87,9 +87,15 @@ th {
   vertical-align: middle !important;
 }
 
+.instances tr td div {
+  position: relative;
+  display: inline-block;
+}
+
 .instances img {
   border-radius: 4em;
   transition: 2s all;
+  display: block;
 }
 
 .instances tr:hover img {
@@ -105,6 +111,26 @@ th {
   background-color: rgba(0,255,0,0.1) !important;
   cursor: pointer;
   transition: all .5s;
+}
+
+.heroic {
+  position: absolute;
+  display: block;
+  z-index: 1;
+
+  margin-left: 37px;
+  margin-top: 37px;
+
+  height: 75px;
+  width: 75px;
+
+  opacity: 1;
+  transition: .5s all;
+}
+
+.instances tr td div:hover .heroic {
+  opacity: 0;
+  transition: .5s all;
 }
 
 .align-middle td {

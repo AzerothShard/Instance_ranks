@@ -30,6 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'partials/instances.html',
       controller: 'instancesController'
     })
+    .state('instances_from', {
+      url: '/i/:from/',
+      templateUrl: 'partials/instances.html',
+      controller: 'instancesController'
+    })
     .state('instance_player', {
       url: '/ip/:criteria',
       templateUrl: 'partials/instance_player.html',

@@ -1,4 +1,21 @@
 <div class="row">
+  <div class="col-xs-12 pull-right">
+    <div class="text-right">
+      <a ng-href="#!/i/{{ (from - 50 > 0 ? from-50 : 0) }}/{{ search }}">
+        <button class="arrow arrow-left">
+          <i class="pull-right glyphicon glyphicon-chevron-left"></i>
+        </button>
+      </a>
+      <b class="text-align">&nbsp; {{ from + " - " + (from-(-50)) }} &nbsp;</b>
+      <a ng-href="#!/i/{{ 50-(-from) }}/{{ search }}">
+        <button class="arrow arrow-right">
+          <i class="pull-right glyphicon glyphicon-chevron-right"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-xs-12">
     <br>
     <div class="text-center">
@@ -14,8 +31,15 @@
         </thead>
         <tbody class="instances">
           <tr ng-repeat="res in result track by $index" class="exp-{{ res.exp }}" ng-click="goTo('instance', res)">
-            <td class="text-danger">{{ $index+1 }}</td>
-            <td><img width="150" height="150" ng-src="{{ 'img/instances/' + res.name + '.png' }}"></td>
+            <td class="text-danger">{{ $index+1+from }}</td>
+            <td>
+              <div>
+                <img src="img/instances/Heroic.png" class="heroic" ng-show="res.name.indexOf('Heroic') > -1 || res.name.indexOf('(10h)') > -1 || res.name.indexOf('(25h)') > -1">
+                <div>
+                  <img width="150" height="150" ng-src="{{ 'img/instances/' + res.name + '.png' }}">
+                </div>
+              </div>
+            </td>
             <td class="text-warning">{{ res.name }}</td>
             <td style="color: #2962ff;">{{ res.level }}</td>
             <td class="text-danger">{{ res.count }}</td>

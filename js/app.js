@@ -45,7 +45,7 @@ app.controller('playerInstanceController', function ($rootScope, $scope, $stateP
 
 app.controller('instancesController', function ($rootScope, $scope, $stateParams, $http, $state, $localStorage) {
 
-  $rootScope.from = $stateParams.from == null ? 0 : $stateParams.from;
+  $rootScope.from = $stateParams.from == null ? 0 : parseInt($stateParams.from);
   $rootScope.search = $stateParams.search == null ? '' : $stateParams.search;
 
   $rootScope.search = $rootScope.search;
