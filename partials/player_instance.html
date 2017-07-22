@@ -38,7 +38,14 @@
         <tbody class="instances">
           <tr ng-repeat="res in result track by $index" class="exp-{{ res.exp }}">
             <td class="text-danger">{{ $index+1 }}</td>
-            <td><img width="150" height="150" ng-src="{{ 'img/instances/' + res.name + '.png' }}"></td>
+            <td>
+              <div>
+                <img src="img/instances/Heroic.png" class="heroic" ng-show="res.name.indexOf('Heroic') > -1 || res.name.indexOf('(10h)') > -1 || res.name.indexOf('(25h)') > -1">
+                <div>
+                  <img width="150" height="150" ng-src="{{ 'img/instances/' + res.name + '.png' }}">
+                </div>
+              </div>
+            </td>
             <td class="text-warning">{{ res.name }}</td>
             <td class="text-danger">{{ res.count }}</td>
           </tr>
