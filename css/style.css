@@ -67,6 +67,19 @@ th {
   transition: .2s all;
 }
 
+@media only screen and (max-width: 470px) {
+  .menu a {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  .menu a {
+    font-size: 20px;
+    padding: 8px 25px;
+  }
+}
+
 /* General */
 .general tr {
   transition: all .5s;
