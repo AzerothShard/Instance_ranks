@@ -54,6 +54,36 @@ th {
 
 .arrow:hover, .search:hover, .search-input:hover { color: #ffab00; }
 
+.img-32 {
+  width: 32px;
+  height: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+    .table * {
+      font-size: 8px !important;
+    }
+
+    .img-32 {
+      width: 12px;
+      height: 12px;
+    }
+
+    .search-input {
+      width: 85px;
+    }
+
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .col-xs-12 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+}
+
 /* Menu */
 .menu a {
   font-size: 28px;

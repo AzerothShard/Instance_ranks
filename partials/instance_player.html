@@ -47,8 +47,8 @@
             <td class="text-danger">{{ $index+1+from }}</td>
             <td><b class="text-success">{{ res.charName }}</b></td>
             <td>
-              <img width="32" ng-src="{{ 'img/race/64/' + res.race + '-' + res.gender + '.png' }}">
-              <img height="32" ng-src="{{ 'img/class/64/' + res.class + '.png' }}">
+              <img class="img-32" ng-src="{{ 'img/race/64/' + res.race + '-' + res.gender + '.png' }}">
+              <img class="img-32" ng-src="{{ 'img/class/64/' + res.class + '.png' }}">
             </td>
             <td><b class="text-info">{{ res.charLevel }}</b></td>
             <td><b class="guild">{{ (res.guildName != "" && res.guildName != null) ? "<" + res.guildName + ">" : "" }}</b></td></td>

@@ -45,8 +45,8 @@
             <td class="text-danger">{{ res.position }}</td>
             <td class="text-success">{{ res.name }}</td>
             <td>
-              <img width="32" ng-src="{{ 'img/race/64/' + res.race + '-' + res.gender + '.png' }}">
-              <img height="32" ng-src="{{ 'img/class/64/' + res.class + '.png' }}">
+              <img class="img-32" ng-src="{{ 'img/race/64/' + res.race + '-' + res.gender + '.png' }}">
+              <img class="img-32" ng-src="{{ 'img/class/64/' + res.class + '.png' }}">
             </td>
             <td class="text-info">{{ res.level }}</td>
             <td class="guild">{{ (res.guildName != "" && res.guildName != null) ? "<" + res.guildName + ">" : "" }}</td>
