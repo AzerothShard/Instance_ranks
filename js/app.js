@@ -1,6 +1,5 @@
 var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap', 'ngStorage', 'angular-loading-bar']);
 
-
 app.run(function($state, $localStorage, $rootScope) {
   $rootScope.goTo = function(playerInstance, val) {
     if (playerInstance == "player") {
@@ -12,6 +11,22 @@ app.run(function($state, $localStorage, $rootScope) {
       $state.go("instance_player", { criteria: val.criteria });
     }
   };
+
+  $rootScope.$state = $state;
+
+  // First Kill Annuali year handling
+  var current_year = (new Date()).getFullYear();
+  $rootScope.year = $localStorage.year == null || $localStorage.year == '' ? current_year : $localStorage.year;
+
+  $rootScope.update_year = function (amount) {
+    $rootScope.year += amount;
+
+    if ($rootScope.year > current_year)
+      $rootScope.year = current_year;
+
+    $localStorage.year = $rootScope.year;
+  };
+
 });
 
 app.controller('rankGenericController', function ($rootScope, $scope, $stateParams, $http, $state, $localStorage) {
@@ -77,5 +92,10 @@ app.controller('instancePlayerController', function ($rootScope, $scope, $stateP
  };
 
  $scope.update($scope.from);
+
+});
+
+
+app.controller('firstKillController', function ($rootScope, $scope, $stateParams, $http, $localStorage) {
 
 });

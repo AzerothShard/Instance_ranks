@@ -9,6 +9,15 @@ th {
   text-align: center;
 }
 
+.align-middle td { vertical-align: middle !important; }
+.green { color: #0ce3ac; }
+
+.exp-1 { border: 2px solid #795548; }
+.exp-2 { border: 2px solid #1b5e20; }
+.exp-3 { border: 2px solid #0d47a1; }
+
+.guild { color: rgba(0,255,0,0.7); }
+
 .search {
   height: 35px;
   width: 35px;
@@ -188,12 +197,25 @@ th {
   transition: .5s all;
 }
 
-.align-middle td {
-  vertical-align: middle !important;
+/* First Kill Annuali */
+.fka tr {
+  transition: all .5s;
 }
 
-.exp-1 { border: 2px solid #795548; }
-.exp-2 { border: 2px solid #1b5e20; }
-.exp-3 { border: 2px solid #0d47a1; }
+.fka tr:hover {
+  /*background-color: rgb(49, 176, 213, 0.3);*/
+  transition: all .5s;
+  cursor: pointer;
+}
 
-.guild { color: rgba(0,255,0,0.7); }
+.fka .lich-king:hover   { background-color: rgb(228, 92, 0, 0.2);   }
+.fka .kel-thuzad:hover  { background-color: rgb(126, 63, 157, 0.3); }
+.fka .algalon:hover     { background-color: rgb(49, 176, 213, 0.3); }
+.fka .yogg-saron:hover  { background-color: rgba(0, 255, 0,  0.1);  }
+.fka .malygos:hover     { background-color: rgb(40, 96, 144, 0.8);  }
+.fka .sartharion:hover  { background-color: rgb(201, 48, 44, 0.5);  }
+
+.year {
+  padding: 0 10px;
+  display: inline;
+}
