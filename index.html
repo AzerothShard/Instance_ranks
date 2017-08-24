@@ -63,13 +63,13 @@
         </div>
         <br>
 
-        <div class="row" ng-show="$state.includes('first_kill_annuali')">
+        <div class="row text-center" ng-show="$state.includes('first_kill_annuali') || $state.includes('fka_achievement')">
           <div class="col-xs-12">
             <br>
             <button class="arrow arrow-left green" ng-click="update_year(-1)">
               <i class="pull-right glyphicon glyphicon-chevron-left"></i>
             </button>
-            <h4 class="text-center year green"> {{ year }} </h4>
+            <h1 class="text-center year green"> {{ year }} </h1>
             <button class="arrow arrow-right green" ng-click="update_year(1)">
               <i class="pull-right glyphicon glyphicon-chevron-right"></i>
             </button>
