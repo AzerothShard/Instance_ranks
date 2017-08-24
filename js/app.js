@@ -1,10 +1,13 @@
 var app = angular.module('instance_ranks', [ 'ui.router', 'ui.bootstrap', 'ngStorage', 'angular-loading-bar']);
 
 app.run(function($state, $localStorage, $rootScope) {
-  $rootScope.goTo = function(playerInstance, val) {
-    if (playerInstance == "player") {
+  $rootScope.goTo = function(page, val) {
+    if (page == "player") {
       $localStorage.char = val;
       $state.go("player_instance", { guid: val.guid });
+    }
+    else if (page == "fka") {
+      $state.go("fka_achievement", { achievement: val });
     }
     else {
       $localStorage.instance = val;
@@ -97,5 +100,19 @@ app.controller('instancePlayerController', function ($rootScope, $scope, $stateP
 
 
 app.controller('firstKillController', function ($rootScope, $scope, $stateParams, $http, $localStorage) {
+
+  $scope.achievements = {
+    "04576" : { ID: "4576", class: "lich-king",  img: "The Lich King.png", description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg" },
+    "01402" : { ID: "1402", class: "kel-thuzad", img: "Kel'Thuzad.png",    description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg" },
+    "03259" : { ID: "3259", class: "algalon",    img: "Algalon.png",       description: "Celestial Defender",      icon: "achievement_boss_algalon_01.jpg" },
+    "03117" : { ID: "3117", class: "yogg-saron", img: "Yogg-Saron.png",    description: "Death's Demise",          icon: "achievement_boss_yoggsaron_01.jpg" },
+    "01400" : { ID: "1400", class: "malygos",    img: "Malygos.png",       description: "Magic Seeker",            icon: "inv_misc_head_dragon_blue.jpg" },
+    "0456"  : { ID: "456", class: "sartharion", img: "Sartharion.png",     description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg" },
+  };
+
+  $scope.cur_a = "";
+  if ($stateParams.achievement != null && $stateParams.achievement != "")
+    $scope.cur_a = "0" + $stateParams.achievement;
+  console.log($scope.cur_a);
 
 });

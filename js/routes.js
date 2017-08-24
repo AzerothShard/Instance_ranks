@@ -45,8 +45,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'partials/first_kill_annuali.html',
       controller: 'firstKillController'
     })
-    .state('first_kill_annuali.achievement', {
-      url: '/fka/:achievement',
+    .state('fka_achievement', {
+      url: '/fka/:achievement/',
       templateUrl: 'partials/fka_achievement.html',
       controller: 'firstKillController'
     });
