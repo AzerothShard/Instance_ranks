@@ -116,7 +116,7 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
   };
 
   $scope.load_first_kill = function() {
-    $http.get("http://localhost/WoWTools/AC-JSON-API/public/index.php/first_kill?year=" + $rootScope.year + "&achievement=" + $stateParams.achievement)
+    $http.get(app.tc_api + "first_kill?year=" + $rootScope.year + "&achievement=" + $stateParams.achievement)
      .then(function (response) {
          $scope.result = response.data;
       }, function (data, status, header, config) {
