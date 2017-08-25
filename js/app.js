@@ -101,6 +101,11 @@ app.controller('instancePlayerController', function ($rootScope, $scope, $stateP
 
 app.controller('firstKillController', function ($rootScope, $scope, $stateParams, $http, $localStorage) {
 
+  $scope.$watch('year', function(newVal, oldVal){
+    if ($stateParams.achievement != null && $stateParams.achievement != "")
+      $scope.load_first_kill();
+  }, true);
+
   $scope.achievements = {
     "04576" : { ID: "4576", class: "lich-king",  img: "The Lich King.png", description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg" },
     "01402" : { ID: "1402", class: "kel-thuzad", img: "Kel'Thuzad.png",    description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg" },
@@ -110,9 +115,19 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
     "0456"  : { ID: "456", class: "sartharion", img: "Sartharion.png",     description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg" },
   };
 
+  $scope.load_first_kill = function() {
+    $http.get("http://localhost/WoWTools/AC-JSON-API/public/index.php/first_kill?year=" + $rootScope.year + "&achievement=" + $stateParams.achievement)
+     .then(function (response) {
+         $scope.result = response.data;
+      }, function (data, status, header, config) {
+       console.log("[ERROR] $http.get request failed!");
+     });
+  };
+
   $scope.cur_a = "";
-  if ($stateParams.achievement != null && $stateParams.achievement != "")
+  if ($stateParams.achievement != null && $stateParams.achievement != "") {
     $scope.cur_a = "0" + $stateParams.achievement;
-  console.log($scope.cur_a);
+    $scope.load_first_kill();
+  }
 
 });
