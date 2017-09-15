@@ -5,9 +5,9 @@
       <table class="table table-striped table-bordered fka">
         <tbody>
           <tr ng-repeat="achi in achievements" class="align-middle {{ achi.class }}" ng-click="goTo('fka', achi.ID)">
-            <td><img src="img/first_kill/{{ achi.img }}"></td>
+            <td><img ng-src="img/first_kill/{{ achi.img }}"></td>
             <td class="text-warning"><h2>{{ achi.description }}</h2></td>
-            <td><img src="img/first_kill/achievements_icon/{{ achi.icon }}"></td>
+            <td><img ng-src="img/first_kill/achievements_icon/{{ achi.icon }}"></td>
           </tr>
         </tbody>
       </table>
