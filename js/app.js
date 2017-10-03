@@ -107,12 +107,13 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
   }, true);
 
   $scope.achievements = {
-    "04576" : { ID: "4576", class: "lich-king",  img: "The Lich King.png", description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg" },
-    "01402" : { ID: "1402", class: "kel-thuzad", img: "Kel'Thuzad.png",    description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg" },
-    "03259" : { ID: "3259", class: "algalon",    img: "Algalon.png",       description: "Celestial Defender",      icon: "achievement_boss_algalon_01.jpg" },
-    "03117" : { ID: "3117", class: "yogg-saron", img: "Yogg-Saron.png",    description: "Death's Demise",          icon: "achievement_boss_yoggsaron_01.jpg" },
-    "01400" : { ID: "1400", class: "malygos",    img: "Malygos.png",       description: "Magic Seeker",            icon: "inv_misc_head_dragon_blue.jpg" },
-    "0456"  : { ID: "456", class: "sartharion", img: "Sartharion.png",     description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg" },
+    "04576" : { ID: "4576", class: "lich-king",       img: "The Lich King.png",     description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg" },
+    "01402" : { ID: "1402", class: "kel-thuzad",      img: "Kel'Thuzad.png",        description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg" },
+    "03259" : { ID: "3259", class: "algalon",         img: "Algalon.png",           description: "Celestial Defender",      icon: "achievement_boss_algalon_01.jpg" },
+    "03117" : { ID: "3117", class: "yogg-saron",      img: "Yogg-Saron.png",        description: "Death's Demise",          icon: "achievement_boss_yoggsaron_01.jpg" },
+    "01400" : { ID: "1400", class: "malygos",         img: "Malygos.png",           description: "Magic Seeker",            icon: "inv_misc_head_dragon_blue.jpg" },
+    "0456"  : { ID: "456",  class: "sartharion",      img: "Sartharion.png",        description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg" },
+    "04078" : { ID: "4078", class: "anub-arak",  img: "Anub'arak.png",         description: "Grand Crusader",          icon: "achievement_reputation_argentcrusader.jpg" },
   };
 
   $scope.load_first_kill = function() {
