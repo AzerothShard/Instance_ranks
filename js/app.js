@@ -116,9 +116,16 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
   };
 
   $scope.load_first_kill = function() {
+    $scope.text = "";
+
     $http.get(app.tc_api + "first_kill?year=" + $rootScope.year + "&achievement=" + $stateParams.achievement)
      .then(function (response) {
-         $scope.result = response.data;
+
+       $scope.result = response.data
+
+        if (response.data == "")
+          $scope.text = "La competizione è aperta! Entra negli annali dei campioni!";
+
       }, function (data, status, header, config) {
        console.log("[ERROR] $http.get request failed!");
      });

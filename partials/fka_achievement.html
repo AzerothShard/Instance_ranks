@@ -8,7 +8,7 @@
       </thead>
       <tbody class="instances">
         <tbody>
-          <tr class="align-middle {{ achievements[cur_a].class }}">
+          <tr class="align-middle {{ achievements[cur_a].class }} greyscale {{ text == '' ? 'nograyscale' : '' }}">
             <td><img ng-src="img/first_kill/{{ achievements[cur_a].img }}"></td>
             <td class="text-warning"><h2>{{ achievements[cur_a].description }}</h2></td>
             <td><img ng-src="img/first_kill/achievements_icon/{{ achievements[cur_a].icon }}"></td>
@@ -22,7 +22,8 @@
   <div class="col-xs-12">
     <br>
     <div class="text-center">
-      <table class="table table-striped table-bordered">
+      <h3 ng-if="text != ''">{{ text }}</h3>
+      <table class="table table-striped table-bordered" ng-if="text == ''">
         <thead>
           <tr class="text-warning">
             <th>●</th>
