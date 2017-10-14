@@ -124,8 +124,12 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
 
        $scope.result = response.data
 
-        if (response.data == "")
+       var year = new Date().getFullYear();
+
+        if (response.data == "" && $rootScope.year == year)
           $scope.text = "La competizione è aperta! Entra negli annali dei campioni!";
+        else if (response.data == "" && $rootScope.year < year)
+          $scope.text = "Questa battaglia è ormai persa, ritenta il prossimo anno!";
 
       }, function (data, status, header, config) {
        console.log("[ERROR] $http.get request failed!");
