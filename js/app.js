@@ -119,7 +119,7 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
   $scope.load_first_kill = function() {
     $scope.text = "";
 
-    $http.get(app.tc_api + "first_kill?year=" + $rootScope.year + "&achievement=" + $stateParams.achievement)
+    $http.get(app.tc_api + "first_kill?year=" + $rootScope.year + "&achievement=" + $scope.achievements[$stateParams.achievement].ID)
      .then(function (response) {
 
        $scope.result = response.data
@@ -134,7 +134,7 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
 
   $scope.cur_a = "";
   if ($stateParams.achievement != null && $stateParams.achievement != "") {
-    $scope.cur_a = "0" + $stateParams.achievement;
+    $scope.cur_a = $stateParams.achievement;
     $scope.load_first_kill();
   }
 
