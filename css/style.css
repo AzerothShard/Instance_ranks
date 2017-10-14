@@ -208,14 +208,14 @@ th {
   cursor: pointer;
 }
 
-.fka .lich-king:hover   { background-color: rgba(228, 92, 0, 0.2);   }
-.fka .lich-king:hover   { background-color: rgba(228, 92, 0, 0.2);   }
+.fka .lich-king         { border: 2px solid transparent; }
+.fka .lich-king:hover   { background-color: rgba(228, 92, 0, 0.2);  border: 2px solid rgba(255, 255, 0, 0.5); }
 .fka .kel-thuzad:hover  { background-color: rgba(126, 63, 157, 0.3); }
 .fka .algalon:hover     { background-color: rgba(49, 176, 213, 0.3); }
 .fka .yogg-saron:hover  { background-color: rgba(0, 255, 0,  0.1);   }
 .fka .malygos:hover     { background-color: rgba(40, 96, 144, 0.8);  }
 .fka .sartharion:hover  { background-color: rgba(201, 48, 44, 0.5);  }
-.fka .anub-arak:hover   { background-color: rgba(40, 65, 91, 0.5);   }
+.fka .anub-arak:hover   { background-color: rgba(40, 65, 91, 1);   }
 
 .year {
   padding: 0 10px;
