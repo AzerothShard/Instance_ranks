@@ -221,3 +221,15 @@ th {
   padding: 0 10px;
   display: inline;
 }
+
+.greyscale td img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+.greyscale:hover td img, .nograyscale td img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: 1s;
+}
