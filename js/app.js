@@ -107,14 +107,30 @@ app.controller('firstKillController', function ($rootScope, $scope, $stateParams
   }, true);
 
   $scope.achievements = {
-    "0" : { ID: "1402", class: "kel-thuzad",      img: "Kel'Thuzad.png",        description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg" },
-    "1" : { ID: "456",  class: "sartharion",      img: "Sartharion.png",        description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg" },
-    "2" : { ID: "1400", class: "malygos",         img: "Malygos.png",           description: "Magic Seeker",            icon: "inv_misc_head_dragon_blue.jpg" },
-    "3" : { ID: "3117", class: "yogg-saron",      img: "Yogg-Saron.png",        description: "Death's Demise",          icon: "achievement_boss_yoggsaron_01.jpg" },
-    "4" : { ID: "3259", class: "algalon",         img: "Algalon.png",           description: "Celestial Defender",      icon: "achievement_boss_algalon_01.jpg" },
-    "5" : { ID: "4078", class: "anub-arak",       img: "Anub'arak.png",         description: "Grand Crusader",          icon: "achievement_reputation_argentcrusader.jpg" },
-    "6" : { ID: "4576", class: "lich-king",       img: "The Lich King.png",     description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg" }
+    "0" : { ID: "1402", class: "kel-thuzad",      img: "Kel'Thuzad.png",        description: "Conqueror of Naxxramas",  icon: "inv_trinket_naxxramas06.jpg",                        key: "Conqueror_of_Naxxramas" },
+    "1" : { ID: "456",  class: "sartharion",      img: "Sartharion.png",        description: "Obsidian Slayer",         icon: "achievement_dungeon_coablackdragonflight_25man.jpg", key: "Obsidian_Slayer"        },
+    "2" : { ID: "1400", class: "malygos",         img: "Malygos.png",           description: "Magic Seeker",            icon: "inv_misc_head_dragon_blue.jpg",                      key: "Magic_Seeker"           },
+    "3" : { ID: "3117", class: "yogg-saron",      img: "Yogg-Saron.png",        description: "Death's Demise",          icon: "achievement_boss_yoggsaron_01.jpg",                  key: "Death_Demise"           },
+    "4" : { ID: "3259", class: "algalon",         img: "Algalon.png",           description: "Celestial Defender",      icon: "achievement_boss_algalon_01.jpg",                    key: "Celestial_Defender"     },
+    "5" : { ID: "4078", class: "anub-arak",       img: "Anub'arak.png",         description: "Grand Crusader",          icon: "achievement_reputation_argentcrusader.jpg",          key: "Grand_Crusader"         },
+    "6" : { ID: "4576", class: "lich-king",       img: "The Lich King.png",     description: "Fall of the Lich King",   icon: "inv_helmet_96.jpg",                                  key: "Fall_of_the_Lich_King"  }
   };
+
+  $scope.years = "";
+  $scope.year_active = function(achi) {
+    if ($scope.years != "" && $rootScope.year == (new Date()).getFullYear())
+      return $scope.years[$rootScope.year][achi.key] == 1;
+
+    return true;
+  };
+
+  $http.get(app.tc_api + "instance_ranks")
+  .then(function (response) {
+    $scope.years = {};
+
+    for (var i in response.data)
+      $scope.years[response.data[i].year] = response.data[i];
+  });
 
   $scope.load_first_kill = function() {
     $scope.text = "";
